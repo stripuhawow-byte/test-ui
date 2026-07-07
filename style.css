@@ -1,119 +1,196 @@
 @font-face {
-  font-family: "TTLakes-Thin";
-  src: url(/TTLakes-Thin.woff) format("woff");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-
-body{
-  font-family: "TT Lakes", ;
+    font-family: "TTLakes";
+    src: url("TTLakes-Thin.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 *{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
+body{
+    font-family:"TTLakes",sans-serif;
+    color:#1B1C21;
+    background:#F8F8F8;
+}
+
 a{
-  text-decoration: none;
+    text-decoration:none;
+    color:inherit;
 }
+
 li{
-  list-style: none;
+    list-style:none;
 }
+
+button{
+    font:inherit;
+    border:none;
+    background:transparent;
+    cursor:pointer;
+}
+
 .container{
-  max-width: 784px;
-  margin: 0 auto;
-  padding: 0 16px;
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 16px;
 }
+
+/* HEADER */
+
 .navigation{
-  display: flex;
-  justify-content: space-between;
-  padding-block: 24px;
-  margin-bottom: 24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:24px 0;
 }
-.navigation__menu{
-  display: flex;
-  gap: 16px;
-}
+
 .navigation__brand{
-  display: flex;
-  gap: 42px;
-  align-items: center;
+    display:flex;
+    align-items:center;
+    gap:20px;
 }
+
+.navigation__menu{
+    display:flex;
+    gap:16px;
+}
+
+/* TITLE */
+
 .services__title{
-  margin-bottom: 32px;
-  font-weight: 700;
+    margin-bottom:24px;
+    font-size:28px;
+    font-weight:700;
 }
+
+/* MENU */
+
 .services__nav{
-  display: flex;
-  margin-bottom: 32px;
-  gap: 16px;
-}
-.services-nav__item{
- padding-inline: 8px;
- padding-block: 16px;
- font-size: 14px;
- color: #7E7E82;
- border:none
+    display:flex;
+    gap:12px;
 
+    overflow-x:auto;
+    white-space:nowrap;
+
+    margin-bottom:24px;
+    padding-bottom:8px;
 }
+
+.services__nav::-webkit-scrollbar{
+    display:none;
+}
+
+.services__nav-item{
+
+    padding:10px 18px;
+
+    border-radius:6px;
+
+    color:#7E7E82;
+
+    flex-shrink:0;
+}
+
+.services__nav-item:hover{
+
+    background:white;
+
+    border:2px solid #B8FFEC;
+}
+
+/* CONTENT */
+
 .services{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
 }
+
 .services__text{
-  max-width: 312px;
-  margin-bottom: 20px;
-  font-size: 14px;
-  color: #1B1C21;
-  font-weight: 400;
-  line-height: 20px;
+
+    margin-bottom:16px;
+
+    font-size:14px;
+
+    line-height:20px;
 }
+
 .services__more{
-  display: inline-flex;
-  align-items: center;
-  margin-top: 10px;
-  gap: 8px;
-  color: #1B1C21;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-weight:500;
 }
+
 .services__more::before{
-  content: "";
-  width: 24px;
-  height: 24px;
-  background: url("/ic/expand.svg") center/contain no-repeat;
-}
-.services-nav__item:hover{
-  cursor: pointer;
-}
-@media (min-width: 320px) {
-.services{
-  display: flex;
-  flex-wrap: wrap;
+
+    content:"";
+
+    width:24px;
+
+    height:24px;
+
+    background:url("ic/expand.svg") center/contain no-repeat;
 }
 
+.services__image{
+
+    width:100%;
+
+    height:auto;
+
+    border-radius:8px;
 }
-@media (min-width: 768px) {
-    .services {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 32px;
+
+/* TABLET */
+
+@media (min-width:768px){
+
+    .container{
+        padding:0 24px;
     }
+
+    .services{
+
+        flex-direction:row;
+
+        align-items:flex-start;
+
+        gap:32px;
+    }
+
+    .services__content{
+        flex:1;
+    }
+
+    .services__image{
+        width:360px;
+    }
+
 }
 
+/* DESKTOP */
 
-@media (min-width: 1024px) {
-    .services {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 32px;
+@media (min-width:1120px){
+
+    .container{
+        padding:0 32px;
     }
+
+    .services__image{
+        width:530px;
+    }
+
 }
